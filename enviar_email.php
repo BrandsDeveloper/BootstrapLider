@@ -13,7 +13,7 @@ $aceito = $_POST['politica'];
 $acesso = $_POST['notificar'];
 
 
-$to = "contato@atendimento.com";
+$to = "lucas.brandao@liderfinanceira.com";
 
 $boundary = "XYZ-" . date("dmYis") . "-ZYX";
  $headers = "MIME-Version: 1.0\n";
