@@ -1,0 +1,692 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <!-- Meta tags Obrigatórias -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
+
+    <title>Emprestimo Consignado</title>
+
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/media.css">
+    <link rel="shortcut icon" href="img/blue.ico" type="image/x-icon">
+
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js" type="text/javascript"></script>
+    <script src="js/maskMoney.js" type="text/javascript"></script>
+
+  </head>
+
+  <body id="emprestimo">
+    
+    <!-- Inicio Barra de Navegação -->
+    <header id="topo">
+
+      <nav class="navbar fixed-top navbar-expand-md color">
+
+        <div class="container">
+
+          <a href="index.html" class="navbar-brand one"> 
+            <img src="img/logwhiteandyelow.png" width="142" alt="Logo Líder"> 
+          </a>
+
+          <a href="index.html" class="navbar-brand"> 
+            <img src="img/logblue.png" class="two" width="142" alt="Logo Líder"> 
+          </a>
+          
+          <input type="checkbox" class="" id="check">
+            <label for="check" class="text-light one"> <i class="fas fa-bars fa-lg"></i> </label>
+          </input>
+
+          <input type="checkbox" class="" id="check">
+            <label for="check" class="text-dark two"> <i class="fas fa-bars fa-lg"></i> </label>
+          </input>
+
+          <div class="navbar-collapse bar-responsive">
+
+            <ul class="navbar-nav ml-md-auto text-color">
+
+              <li class="nav-item">
+                <a class="nav-link" href="index.html">Home</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="quem_somos.html">Quem somos</a>
+              </li>
+              <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="">Produtos</a>
+
+                <div class="dropdown-menu">
+                  <a class="dropdown-item" href="fgts.html">FGTS</a>
+                  <a class="dropdown-item" href="emprestimo.html">Crédito Consignado</a>
+                  <a class="dropdown-item" href="cartao.html">Cartão de Crédito</a>
+                </div>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="contato.html">Contato</a>
+              </li>
+
+              <li class="nav-item space">
+                <a class="nav-link" href="https://www.facebook.com/liderfinanceira.if/" target="_blank"> <i class="fab fa-facebook-f fa-lg"></i> </a>
+                <a class="nav-link" href="https://www.instagram.com/liderfinanceira/" target="_blank"> <i class="fab fa-instagram fa-lg"></i> </a>
+              </li>
+
+              <li class="nav-item">
+                <button type="button" class="btn btn-primary btn-css d-flex align-items-center" onclick="Mudarestado('minhaDiv')">Simule aqui</button>
+              </li>
+
+              <div class="row d-md-none pl-2 text-white element-size">
+                <div class="col-md-6 mt-2 text-size">
+                  &copy; 2021 Copyright Líder Consig. Todos direitos reservados.
+                </div>
+                <div class="col-md-6 mt-2 text-size">
+                  <span>Desenvolvido por: Lucas Brandão</span>
+                </div>
+              </div>
+
+            </ul>
+
+            
+
+          </div>
+        </div>
+
+      </nav>
+
+    </header>
+
+    <section id="minhaDiv" class="bg-white shadow">
+
+      <div class="px-3 py-1 bg-primary text-white">
+    
+        <div class="row align-items-center justify-content-between">
+          
+            <div class="col-12 text-center">
+              <span class="font-weight-bolder">Simulador Livre</span>
+            </div> 
+            
+        </div>
+      </div>
+    
+        <div class="p-3">
+    
+          <div class="row align-items-end">
+
+            <div class="col-6 text-center">
+
+              <label for="parcela" class="d-block mb-1">Parcela</label> 
+              <input id="parcela" type="text" autocomplete="off" class="form-control w-100" name="money" placeholder="Ex: R$ 500,00" data-thousands="." data-decimal="," data-prefix="R$ ">
+              <script type="text/javascript">$("#parcela").maskMoney();</script>
+
+
+            </div> 
+            
+            <div class="col-auto">
+              <span class="d-block mb-1">Valor Liberado 
+                <span class="d-flex align-items-end text-primary font-weight-bolder result-value"> R$ 
+                  <input type="text" id="result" class="bordinhas" readonly="readonly" value="0,00"> 
+                </span> 
+              </span>
+            </div>
+
+          </div> 
+
+        <hr> 
+        
+        <div class="row align-items-end">
+
+          <div class="col-6 text-center">
+
+            <label for="liberado" class="d-block mb-1">Valor Desejado</label> 
+            <input id="liberado" type="text" autocomplete="off" class="form-control w-100" name="money" placeholder="Ex: R$ 25.000,00" data-thousands="." data-decimal="," data-prefix="R$ ">
+            <script type="text/javascript">$("#liberado").maskMoney();</script>
+
+          </div> 
+          
+          <div class="col-auto">
+
+            <span class="d-block mb-1">Parcela
+              <span class="d-flex align-items-end text-primary font-weight-bolder result-value"> R$ 
+                <input type="text" id="resultado" class="bordinhas" readonly="readonly" value="0,00" > 
+              </span>
+            </span>
+
+          </div>
+
+        </div>
+        
+      </div>
+
+    </section>
+    
+
+    <!-- Inicio Conteudo -->
+    <main>
+
+      <!-- Inicio Botões Fixos -->
+      <section id="element-fixed">
+      
+        <div class="move">
+      
+          <a href="#intro">
+            <img src="img/icons/seta2.webp" width="50" alt="seta">
+          </a>
+      
+        </div>
+      
+        <div class="move-2">
+      
+          <a href="https://api.whatsapp.com/send?phone=551124792004&text=Ol%C3%A1%2C%20vim%20do%20Site%20de%20voc%C3%AAs%20e%20gostaria%20de%20saber%20mais%20informa%C3%A7%C3%B5es%20sobre%20os%20produtos%20que%20voc%C3%AAs%20trabalham" class="d-none d-md-block" target="_blank">
+            <img src="img/icons/Whats.webp" width="50" alt="botão whatsapp">
+          </a>
+      
+        </div>
+      
+      </section>
+
+      <!-- Inicio Seção 1 -->
+      <section id="intro">
+
+          <div class="container">
+
+            <div class="row pt-5 space">
+
+              <div class="col-md-5 pt-md-5 d-flex">
+
+                <div class="mt-5">
+
+                  <h2 class="display-3 text-white text-form"> Empréstimo Consignado </h2>
+
+                  <p>Com parcelas que cabem no seu bolso</p>
+
+                </div>
+                
+              </div>
+
+              <div class="col-md-7 pt-md-5 d-none d-md-block">
+                <img src="img/pessoas/c.webp" width="750" alt="Duas pessoas olhando no celular">
+              </div>
+
+            </div>
+
+          </div>
+          
+          <svg class="svgg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 240">
+            <path fill="#fff" fill-opacity="1"
+              d="M0,0L80,10.7C160,21,320,43,480,80C640,117,800,171,960,181.3C1120,192,1280,160,1360,144L1440,128L1440,320L1360,320C1280,320,1120,320,960,320C800,320,640,320,480,320C320,320,160,320,80,320L0,320Z">
+            </path>
+          </svg>
+
+      </section>
+     
+      <!-- Inicio Seção 2 -->
+      <section id="element-explain">
+
+        <div class="container">
+
+          <div class="row">
+
+            <div class="col-md-6 d-flex align-items-center justify-content-center">
+              <img src="img/pig.webp" class="d-none d-md-block img-fluid" width="500" alt="porquinho">
+            </div>
+
+            <div class="col-md-6 text-center text-md-right">
+
+              <p>Vem para a Líder</p>
+              <h1 class="m-0">O que é</h1>
+              <h2 class="mb-4 mb-md-5"> um Empréstimo?</h2>
+
+              <p>O Empréstimo Consignado hoje funciona da seguinte forma. O INSS disponibiliza um benefício quando você se aposenta ou recebe uma pensão. Por meio dele, você pode usar até 35% de sua renda para realizar esta operação. O Empréstimo Consignado é a opção de crédito mais barata no Brasil. Nós intermediamos o seu empréstimo e fornecemos a você o melhor atendimento, o melhor parcelamento e a melhor solução
+              financeira.</p>
+
+            </div>
+
+          </div>
+
+        </div>
+
+      </section>
+
+      <!-- Inicio Seção 3 -->
+      <section id="element-people">
+
+        <div class="container">
+
+          <div class="row mt-md-5">
+
+            <div class="col-md-12 text-center mt-5">
+              <h4 class="ml-md-4">Quem tem</h4>
+              <h5 class="display-4 ml-3 ml-md-5">Direito?</h1>
+            </div>
+
+            <div class="col-md-4 d-flex justify-content-center mt-5">
+
+              <div class="bordas p-3 p-md-4">
+
+                <div class="row text-center">
+
+                  <div class="col-md-12">
+                    <img src="img/icons/pessoa.webp" width="90" class="img-fluid" alt="icon de pessoa">
+                  </div>
+
+                  <div class="col-md-12 p-0">
+                    <h6 class="text-black-50 mx-auto mt-4">Aposentados e Pensionistas pelo INSS</h6>
+                  </div>
+
+                </div>
+
+              </div>
+
+            </div>
+            
+            <div class="col-md-4 d-flex justify-content-center mt-5">
+
+              <div class="bordas p-3 p-md-4">
+
+                  <div class="row text-center">
+
+                    <div class="col-md-12 ">
+                      <img src="img/icons/calendario.webp" width="90" class="img-fluid" alt="calendario">
+                    </div>
+
+                    <div class="col-md-12">
+                      <h6 class="text-black-50 mx-auto mt-4">Possuir de 28 até 74 anos e 11 meses de idade</h6>
+                    </div>
+
+                  </div>
+
+              </div>
+            </div>
+            
+            <div class="col-md-4 d-flex justify-content-center mt-5">
+
+              <div class="bordas p-3 p-md-4">
+
+                <div class="row text-center">
+
+                  <div class="col-md-12">
+                    <img src="img/icons/autorizacao.webp" width="90" class="img-fluid" alt="autorização">
+                  </div>
+
+                  <div class="col-md-12">
+                    <h6 class="text-black-50 mx-auto mt-4">Conter o beneficio desbloqueado para empréstimo</h6>
+                  </div>
+
+                </div>
+
+              </div>
+
+            </div>
+
+          </div>
+
+        </div>
+
+      </section>
+
+      <!-- Inicio Seção 4 -->
+      <section id="element-why">
+
+        <div class="container mt-5">
+
+          <div class="row mt-5">
+
+            <div class="col-md-5 text-center text-md-left">
+
+              <h1 class="mb-5">Por que fazer o Consignado ?</h1>
+
+              <p class="text-justify">Hoje o crédito consignado é a melhor opção do mercado por ser um método simples, rápido e pratico. Através dele você consegue a menor taxa entre os empréstimos e o  maior prazo de carência pagando a primeira parcela somente depois de 4 meses, dando tempo de se programar contra qualquer imprevisto. Além de te entregar a melhor segurança onde é passado por 3 órgãos públicos até que o valor seja liberado para você.</p>
+            </div>
+
+            <div class="col-md-7 d-none d-md-block">
+
+              <div class="d-flex justify-content-around align-items-end space text-center text-white">
+
+                <div class="">
+
+                  <img src="img/Trofeu.webp" width="100" class="img-fluid" alt="Trofeu">
+
+                  <div class="element-back size w-100 border">
+                    <p class="mb-0 mt-2">Taxa</p>
+                    <h6> 1,8% a.m </h6>
+                  </div>
+                </div>
+
+                <div class="element-back h-50 size border"> 
+                  <p class="mb-0 mt-2">Taxa</p>
+                  <h6 class="element-color"> 6,8% a.m </h6> 
+                </div>
+
+                <div class="element-back h-75 size border"> 
+                  <p class="mb-0 mt-2">Taxa</p>
+                  <h6 class="element-color"> 8% a.m </h6> 
+                </div>
+
+                <div class="element-back h-100 size border"> 
+                  <p class="mb-0 mt-2">Taxa</p>
+                  <h6 class="element-color"> 12,7% a.m </h6> 
+                </div>
+
+              </div>
+
+              <div class="d-flex justify-content-around align-items-end text-center">
+
+                <div class="element-size mt-3"> Consignado </div>
+
+                <div class="element-size mt-3"> Crédito Pessoal </div>
+
+                <div class="element-size mt-3"> Crédito Especial </div>
+
+                <div class="element-size mt-3"> Cartão de Crédito </div>
+
+              </div>
+
+            </div>
+
+            <div class="col-md-7 d-block d-md-none">
+            
+              <div class="d-flex flex-column justify-content-around space text-center text-white">
+            
+                <div>
+            
+                  <img src="img/Trofeu.webp" width="100" class="img-fluid" alt="">
+            
+                  <div class="element-back size border">
+                    <p class="mb-0 mt-2">Taxa</p>
+                    <h6> 1,8% a.m </h6>
+                  </div> <p class="ml-3 text-dark text-left">Consignado</p>
+                </div>
+            
+                <div class="element-back w-50 size border">
+                  <p class="mb-0 mt-2">Taxa</p>
+                  <h6 class="element-color"> 6,8% a.m </h6>
+                </div> <p class="ml-3 text-dark text-left">Crédito Pessoal</p>
+            
+                <div class="element-back w-75 size border">
+                  <p class="mb-0 mt-2">Taxa</p>
+                  <h6 class="element-color"> 8% a.m </h6>
+                </div> <p class="ml-3 text-dark text-left">Crédito Especial</p>
+            
+                <div class="element-back w-100 size border">
+                  <p class="mb-0 mt-2">Taxa</p>
+                  <h6 class="element-color"> 12,7% a.m </h6>
+                </div> <p class="ml-3 text-dark text-left">Cartão de Crédito</p>
+            
+              </div>
+            
+            </div>
+
+          </div>
+
+        </div>
+
+      </section>
+
+      <!-- Inicio Seção 5 -->
+      <section id="element-advantage">
+
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320">
+          <path fill="#fff" fill-opacity="1" d="M0,128L80,128C160,128,320,128,480,138.7C640,149,800,171,960,170.7C1120,171,1280,149,1360,138.7L1440,128L1440,0L1360,0C1280,0,1120,0,960,0C800,0,640,0,480,0C320,0,160,0,80,0L0,0Z"></path>
+        </svg>
+
+        <div class="container text-center">
+
+          <div class="col-md-12 mt-5 mt-md-0">
+            <h4 class="ml-md-4">Solitice agora o seu Crédito Consignado</h4>
+            <p class="element-size">Simplificamos o processo para você de forma rápida e segura</p>
+          </div>
+
+            <div class="row justify-content-center">
+            
+              <div class="col-md-3 mt-5">
+            
+                  <img class="mb-4" src="img/icons/pc.webp" width="80" alt="computador">
+                  <h5>Cadastro</h5>
+                  <p class="mx-auto mt-3 element-color">Preencha o formulário e aguarde um de nossos atendentes entrar em contato para mais informações</p>
+            
+              </div>
+            
+              <div class="col-md-3 mt-5">
+            
+                  <img class="mb-4" src="img/icons/autorizacao.webp" width="80" alt="autorização">
+                  <h5>Contratação</h5>
+                  <p class="mx-auto mt-3 element-color"> Depois do desbloqueio do INSS e o envio das documentações para confirmação de dados</p>
+            
+              </div>
+            
+              <div class="col-md-3 mt-5">
+            
+                  <img class="mb-4" src="img/icons/banco.webp" width="80" alt="Banco">
+                  <h5>Banco</h5>
+                  <p class="mx-auto mt-3 element-color">Após a formalização da proposta e assinatura do contrato digital, é enviado ao banco para liberação</p>
+            
+              </div>
+            
+              <div class="col-md-3 mt-5">
+            
+                  <img class="mb-4" src="img/icons/libe.webp" width="80" alt="Liberação">
+                  <h5>Conta</h5>
+                  <p class="mx-auto mt-3 element-color">Após a aprovação o seu dinheiro estará na conta, para que você possa utilizar da forma que quiser!</p>
+            
+              </div>
+            
+            </div>
+
+        </div>
+
+          
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320">
+          <path fill="#fff" fill-opacity="1" d="M0,128L80,128C160,128,320,128,480,138.7C640,149,800,171,960,170.7C1120,171,1280,149,1360,138.7L1440,128L1440,320L1360,320C1280,320,1120,320,960,320C800,320,640,320,480,320C320,320,160,320,80,320L0,320Z"></path>
+        </svg>
+
+        </div>
+
+      </section>
+
+      <!-- Inicio Seção 6 -->
+      <section id="element-questions">
+
+        <div class="container text-center">
+
+          <div class="mb-5">
+            <h4 class="ml-5">Perguntas</h4>
+            <h3 class="display-4 ml-md-5 mb-5">Frequentes</h3>
+          </div>
+
+          <div style="visibility: hidden; position: absolute; width: 0px; height: 0px;">
+            <svg xmlns="http://www.w3.org/2000/svg">
+              <symbol viewBox="0 0 24 24" id="expand-more">
+                <path d="M16.59 8.59L12 13.17 7.41 8.59 6 10l6 6 6-6z" />
+                <path d="M0 0h24v24H0z" fill="none" />
+              </symbol>
+              <symbol viewBox="0 0 24 24" id="close">
+                <path d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z" />
+                <path d="M0 0h24v24H0z" fill="none" />
+              </symbol>
+            </svg>
+          </div>
+          
+          <details>
+            <summary>
+              O que é margem consignável?
+              <svg class="control-icon control-icon-expand" width="24" height="24" role="presentation">
+                <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#expand-more" />
+              </svg>
+              <svg class="control-icon control-icon-close" width="24" height="24" role="presentation">
+                <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#close" />
+              </svg>
+            </summary>
+            <p class="text-center text-md-left">A margem consignável é o limite, estabelecido por lei, para que o valor das parcelas possa ser descontado do salário/benefício, no caso do empréstimo consignado. Atualmente, a margem consignável do INSS é de 40%, sendo que até 35% do recebimento mensal pode ser descontado para o pagamento das parcelas do empréstimo, e 5% para o pagamento do cartão de crédito consignado.</p>
+          </details>
+          
+          <details>
+          
+            <summary>
+              Qual a taxa de juros do consignado ?
+              <svg class="control-icon control-icon-expand" width="24" height="24" role="presentation">
+                <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#expand-more" />
+              </svg>
+              <svg class="control-icon control-icon-close" width="24" height="24" role="presentation">
+                <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#close" />
+              </svg>
+            </summary>
+            <p class="text-center text-md-left">Devido a pandemia de Covid-19, a taxa de juros do empréstimo consignado para aposentados e pensionistas do INSS está fixada em 1,80% ao mês; enquanto a taxa de juros para o cartão de crédito consignado está em 2,70% ao mês.</p>
+          </details>
+          
+          <details>
+            <summary>
+              Como é feito o desconto/pagamento das parcelas do empréstimo junto ao INSS?
+              <svg class="control-icon control-icon-expand" width="24" height="24" role="presentation">
+                <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#expand-more" />
+              </svg>
+              <svg class="control-icon control-icon-close" width="24" height="24" role="presentation">
+                <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#close" />
+              </svg>
+            </summary>
+            <p class="text-center text-md-left">O desconto é realizado diretamente no pagamento do beneficiário, sem necessidade de boleto ou outros meios de pagamento</p>
+          </details>
+
+          <details>
+            <summary>
+              Qual o prazo máximo de parcelas para pagamento de empréstimo junto ao INSS?
+              <svg class="control-icon control-icon-expand" width="24" height="24" role="presentation">
+                <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#expand-more" />
+              </svg>
+              <svg class="control-icon control-icon-close" width="24" height="24" role="presentation">
+                <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#close" />
+              </svg>
+            </summary>
+            <p class="text-center text-md-left">84 meses.</p>
+          </details>
+
+          <details>
+            <summary>
+              Quantas linhas de empréstimo consignado posso ter?
+              <svg class="control-icon control-icon-expand" width="24" height="24" role="presentation">
+                <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#expand-more" />
+              </svg>
+              <svg class="control-icon control-icon-close" width="24" height="24" role="presentation">
+                <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#close" />
+              </svg>
+            </summary>
+            <p class="text-center text-md-left">09 linhas no máximo.</p>
+          </details>
+
+          <details>
+            <summary>
+              Quanto tempo demora para liberar empréstimo consignado do INSS?
+              <svg class="control-icon control-icon-expand" width="24" height="24" role="presentation">
+                <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#expand-more" />
+              </svg>
+              <svg class="control-icon control-icon-close" width="24" height="24" role="presentation">
+                <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#close" />
+              </svg>
+            </summary>
+            <p class="text-center text-md-left">Após a autorização do beneficiário e análise da instituição financeira, o arquivo para averbação do contrato é enviado para o INSS, o retorno do arquivo pode acontecer no mesmo dia dependendo do horário de envio, ou no próximo dia útil, no período da maciça(virada de folha) pode ocorrer atraso de até 03 dias úteis no retorno, período este que pode ocorrer atraso na liberação de valores dos empréstimos consignado, após o arquivo retornar averbado pelo INSS indica que o beneficiário possui a margem para o empréstimo solicitado, ficando a cargo da instituição financeira o pagamento do contrato.</p>
+          </details>
+
+        </div>
+
+      </section>
+
+    </main>
+
+    <!-- Inicio Rodapé -->
+    <footer>
+    
+      <section class="fundo text-white" id="rodape">
+    
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 290">
+          <path fill="#fff" fill-opacity="1"
+            d="M0,128L120,149.3C240,171,480,213,720,218.7C960,224,1200,192,1320,176L1440,160L1440,0L1320,0C1200,0,960,0,720,0C480,0,240,0,120,0L0,0Z">
+          </path>
+        </svg>
+    
+        <div class="container">
+    
+          <div class="row mt-5 mt-md-0">
+    
+            <div class="col-md-6 mb-3 text-center text-md-left mt-3 mt-md-0">
+    
+              <img class="mb-1" src="img/logwhiteandyelow.png" width="160" alt="Logo Líder">
+    
+              <div class="mt-2 icon">
+    
+                <span> <a href="https://www.facebook.com/liderfinanceira.if/" target="_blank"><i
+                      class="fab fa-facebook fa-lg"></i></a> </span>
+                <span> <a href="https://www.instagram.com/liderfinanceira/" target="_blank"><i
+                      class="fab fa-instagram fa-lg"></i></a> </span>
+                <span> <a href="https://www.linkedin.com/company/liderfinanceira" target="_blank"><i
+                      class="fab fa-linkedin fa-lg"></i></a> </span>
+                <span> <a href="https://bit.ly/SomosLider" target="_blank"><i class="fas fa-link fa-lg"></i></a> </span>
+    
+              </div>
+    
+            </div>
+    
+            <div class="col-md-6 mt-md-5 text-center text-md-right">
+    
+              <p><a href="politicas-de-privacidade.html" class="text-white text "><u>Politicas de Privacidade</u></a></p>
+    
+            </div>
+    
+            <div class="col-md-12 text-size text-center text-md-left mt-3 mb-4">
+    
+              <p>Nós, da LL COBRANÇAS INFORMAÇÕES CADASTRAIS - LTDA, pessoa jurídica de direito privado, inscrita no CPNJ
+                sob o 37.787.673/0001-43, atuamos como correspondente bancário para facilitar o processo de contratação de
+                empréstimos, por meio de nossa plataforma digital disponível em www.liderfinanceira.com</p>
+    
+              <p>Quando você utiliza a LIDER, você nos confia seus dados pessoais. Nos comprometemos a manter essa
+                confiança. Nesse sentido, esta Política de Privacidade explica de maneira clara e acessível como as suas
+                informações e dados serão coletados, usados, compartilhados e armazenados por meio dos nossos sistemas.</p>
+    
+              <p>A aceitação desta Política será feita quando o usuário concordar, de forma afirmativa, com o uso dos seus
+                dados pessoais para cada uma das finalidades por nós aqui descritas. Caso não concorde com esta Política,
+                por favor, não continue interagindo com a Plataforma. Todavia, pedimos que nos explique o motivo de
+                discordância para que possamos melhorar nossos produtos.</p>
+    
+              <p>Este documento deve ser lido em conjunto com os nossos Termos de Uso, documento que contém uma visão geral
+                da nossa Plataforma. Caso tenha dúvidas ou precise tratar de qualquer assunto relacionado a esta Política,
+                entre em contato conosco através do e-mail <a class="text-color"
+                  href="mailto:contato@liderfinanceira.com"><u>contato@liderfinanceira.com</u></a></p>
+            </div>
+    
+            <div class="col-md-12 mb-5">
+    
+              <div class="row">
+                <div class="col-md-6 text text-center text-md-left">
+                  &copy; 2021 Copyright Líder Consig. Todos direitos reservados.
+                </div>
+                <div class="col-md-6 mt-4 mt-md-0  text-size text-center text-md-right">
+                  <span>Desenvolvido por: Lucas Brandão</span>
+                </div>
+              </div>
+    
+            </div>
+    
+          </div>
+        </div>
+      </section>
+    
+    </footer>
+
+
+    <!-- JavaScript (Opcional) -->
+    <!-- jQuery primeiro, depois Popper.js, depois Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/scroll.js"></script>
+
+    <script type="text/javascript">
+      SyntaxHighlighter.all()
+    </script>
+
+  </body>
+</html>

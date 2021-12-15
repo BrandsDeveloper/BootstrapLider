@@ -1,0 +1,589 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <!-- Meta tags Obrigatórias -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
+
+    <title>Cartão de Crédito</title>
+
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/media.css">
+    <link rel="shortcut icon" href="img/blue.ico" type="image/x-icon">
+
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js" type="text/javascript"></script>
+    <script src="js/maskMoney.js" type="text/javascript"></script>
+
+  </head>
+
+  <body id="card">
+    
+    <!-- Inicio Barra de Navegação -->
+    <header id="topo">
+
+      <nav class="navbar fixed-top navbar-expand-md color">
+
+        <div class="container">
+
+          <a href="index.html" class="navbar-brand one"> 
+            <img src="img/logwhiteandyelow.png" width="142" alt="Logo Líder"> 
+          </a>
+
+          <a href="index.html" class="navbar-brand"> 
+            <img src="img/logblue.png" class="two" width="142" alt="Logo Líder"> 
+          </a>
+          
+          <input type="checkbox" class="" id="check">
+            <label for="check" class="text-light one"> <i class="fas fa-bars fa-lg"></i> </label>
+          </input>
+
+          <input type="checkbox" class="" id="check">
+            <label for="check" class="text-dark two"> <i class="fas fa-bars fa-lg"></i> </label>
+          </input>
+
+          <div class="navbar-collapse bar-responsive">
+
+            <ul class="navbar-nav ml-md-auto text-color">
+
+              <li class="nav-item">
+                <a class="nav-link" href="index.html">Home</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="quem_somos.html">Quem somos</a>
+              </li>
+              <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="">Produtos</a>
+
+                <div class="dropdown-menu">
+                  <a class="dropdown-item" href="fgts.html">FGTS</a>
+                  <a class="dropdown-item" href="emprestimo.html">Crédito Consignado</a>
+                  <a class="dropdown-item" href="cartao.html">Cartão de Crédito</a>
+                </div>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="contato.html">Contato</a>
+              </li>
+
+              <li class="nav-item space">
+                <a class="nav-link" href="https://www.facebook.com/liderfinanceira.if/" target="_blank"> <i class="fab fa-facebook-f fa-lg"></i> </a>
+                <a class="nav-link" href="https://www.instagram.com/liderfinanceira/" target="_blank"> <i class="fab fa-instagram fa-lg"></i> </a>
+              </li>
+
+              <li class="nav-item">
+                <button type="button" class="btn btn-primary btn-css d-flex align-items-center" onclick="Mudarestado('minhaDiv')">Simule aqui</button>
+              </li>
+
+              <div class="row d-md-none pl-2 text-white element-size">
+                <div class="col-md-6 mt-2 text-size">
+                  &copy; 2021 Copyright Líder Consig. Todos direitos reservados.
+                </div>
+                <div class="col-md-6 mt-2 text-size">
+                  <span>Desenvolvido por: Lucas Brandão</span>
+                </div>
+              </div>
+
+            </ul>
+
+            
+
+          </div>
+        </div>
+
+      </nav>
+
+    </header>
+
+    <section id="minhaDiv" class="bg-white shadow">
+
+      <div class="px-3 py-1 bg-primary text-white">
+    
+        <div class="row align-items-center justify-content-between">
+          
+            <div class="col-12 text-center">
+              <span class="font-weight-bolder">Simulador Livre</span>
+            </div> 
+            
+        </div>
+      </div>
+    
+        <div class="p-3">
+    
+          <div class="row align-items-end">
+
+            <div class="col-6 text-center">
+
+              <label for="parcela" class="d-block mb-1">Parcela</label> 
+              <input id="parcela" type="text" autocomplete="off" class="form-control w-100" name="money" placeholder="Ex: R$ 500,00" data-thousands="." data-decimal="," data-prefix="R$ ">
+              <script type="text/javascript">$("#parcela").maskMoney();</script>
+
+
+            </div> 
+            
+            <div class="col-auto">
+              <span class="d-block mb-1">Valor Liberado 
+                <span class="d-flex align-items-end text-primary font-weight-bolder result-value"> R$ 
+                  <input type="text" id="result" class="bordinhas" readonly="readonly" value="0,00"> 
+                </span> 
+              </span>
+            </div>
+
+          </div> 
+
+        <hr> 
+        
+        <div class="row align-items-end">
+
+          <div class="col-6 text-center">
+
+            <label for="liberado" class="d-block mb-1">Valor Desejado</label> 
+            <input id="liberado" type="text" autocomplete="off" class="form-control w-100" name="money" placeholder="Ex: R$ 25.000,00" data-thousands="." data-decimal="," data-prefix="R$ ">
+            <script type="text/javascript">$("#liberado").maskMoney();</script>
+
+          </div> 
+          
+          <div class="col-auto">
+
+            <span class="d-block mb-1">Parcela
+              <span class="d-flex align-items-end text-primary font-weight-bolder result-value"> R$ 
+                <input type="text" id="resultado" class="bordinhas" readonly="readonly" value="0,00" > 
+              </span>
+            </span>
+
+          </div>
+
+        </div>
+        
+      </div>
+
+    </section>
+    
+
+    <!-- Inicio Conteudo -->
+    <main>
+
+      <!-- Inicio Botões Fixos -->
+      <section id="element-fixed">
+      
+        <div class="move">
+      
+          <a href="#intro">
+            <img src="img/icons/seta2.webp" width="50" alt="seta">
+          </a>
+      
+        </div>
+      
+        <div class="move-2">
+      
+          <a href="https://api.whatsapp.com/send?phone=551124792004&text=Ol%C3%A1%2C%20vim%20do%20Site%20de%20voc%C3%AAs%20e%20gostaria%20de%20saber%20mais%20informa%C3%A7%C3%B5es%20sobre%20os%20produtos%20que%20voc%C3%AAs%20trabalham" class="d-none d-md-block" target="_blank">
+            <img src="img/icons/Whats.webp" width="50" alt="botão whatsapp">
+          </a>
+      
+        </div>
+      
+      </section>
+
+      <!-- Inicio Seção 1 -->
+      <section id="intro">
+
+          <div class="container">
+
+            <div class="row pt-md-5 space">
+
+              <div class="col-md-5 pt-5 d-flex">
+
+                <div class="mt-5">
+
+                  <h2 class="text-white text-form"> Cartão de Crédito Consignado</h2>
+
+                  <p class="mt-3">Não pague anuidade, garanta a menor taxa de juros e ganhe diversas vantagens!</p>
+
+                </div>
+
+              </div>
+
+              <div class="col-md-7 pt-5 d-none d-md-block">
+                <img src="img/card.webp" width="700" alt="cartão">
+              </div>
+
+            </div>
+
+          </div>
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 250">
+            <path fill="#fff" fill-opacity="1" d="M0,32L80,32C160,32,320,32,480,48C640,64,800,96,960,101.3C1120,107,1280,85,1360,74.7L1440,64L1440,320L1360,320C1280,320,1120,320,960,320C800,320,640,320,480,320C320,320,160,320,80,320L0,320Z"></path>
+          </svg>
+
+      </section>
+
+      <!-- Inicio Seção 2 -->
+      <section id="element-consigned">
+
+        <div class="container">
+
+          <div class="row">
+
+            <div class="col-md-6 text-center text-md-left mx-auto row flex-column justify-content-center">
+              <h1 class="m-0">O que é</h1>
+              <h2 class="mb-4"> um Cartão de Crédito Consignado?</h2>
+              
+              <p class="p-0"> É um cartão de crédito disponível somente para os aposentados e pensionistas do INSS, servidores públicos federais, estaduais e municipais em que o valor mínimo da fatura é descontado mensalmente na folha de pagamento. Não existem anuidades, mensalidades e de manutenção, entre outros benefícios. </p>
+            </div>
+
+            <div class="col-md-6 d-flex align-items-center justify-content-center">
+
+              <img src="img/cartao.webp" class="d-none d-md-block img-fluid" width="450" alt="jovem segurando cartão" >
+
+            </div>
+
+          </div>
+
+        </div>
+
+      </section>
+
+      <!-- Inicio Seção 3 -->
+      <section id="element-profitable">
+
+        <div class="container">
+
+          <div class="row mt-md-5">
+
+            <div class="col-md-12 text-center mt-5">
+              <h4 class="ml-md-4">Quais são as </h4>
+              <h5 class="display-4 ml-md-5"> Vantagens?</h1>
+            </div>
+
+            <div class="col-md-4 d-flex justify-content-center mt-5">
+
+              <div class="bordas p-3 p-md-4">
+
+                <div class="row text-center">
+
+                  <div class="col-md-12">
+                    <img src="img/icons/saque.webp" width="90" class="img-fluid" alt="saque">
+                  </div>
+
+                  <div class="col-md-12 p-0">
+                    <h6 class="text-black-50 mx-auto mt-4">Saque até 95% do seu limite do cartão</h6>
+                  </div>
+
+                </div>
+
+              </div>
+
+            </div>
+            
+            <div class="col-md-4 d-flex justify-content-center mt-5">
+
+              <div class="bordas p-3 p-md-4">
+
+                  <div class="row text-center">
+
+                    <div class="col-md-12 ">
+                      <img src="img/icons/descontos.webp" width="90" class="img-fluid" alt="descontos">
+                    </div>
+
+                    <div class="col-md-12">
+                      <h6 class="text-black-50 mx-auto mt-4">Ganhe até 30% de desconto em mercados e Farmacias</h6>
+                    </div>
+
+                  </div>
+
+              </div>
+            </div>
+            
+            <div class="col-md-4 d-flex justify-content-center mt-5">
+
+              <div class="bordas p-3 p-md-4">
+
+                <div class="row text-center">
+
+                  <div class="col-md-12">
+                    <img src="img/icons/negative.webp" width="90" class="img-fluid" alt="negativo">
+                  </div>
+
+                  <div class="col-md-12">
+                    <h6 class="text-black-50 mx-auto mt-4">Disponível também para negativados</h6>
+                  </div>
+
+                </div>
+
+              </div>
+
+            </div>
+
+          </div>
+
+        </div>
+
+      </section>
+
+      <!--inicio Seção 4 -->
+      <section id="element-request">
+
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320">
+          <path fill="#fff" fill-opacity="1" d="M0,224L80,218.7C160,213,320,203,480,192C640,181,800,171,960,170.7C1120,171,1280,181,1360,186.7L1440,192L1440,0L1360,0C1280,0,1120,0,960,0C800,0,640,0,480,0C320,0,160,0,80,0L0,0Z"></path>
+        </svg>
+
+        <div class="container text-center">
+
+          <div class="col-md-12">
+            <h4>Solicite agora o seu Cartão Consignado</h4>
+            <p class="element-size">Veja como é fácil as etapas para adquiri seu cartão</p>
+          </div>
+
+            <div class="row justify-content-center">
+            
+              <div class="col-md-4 mt-5">
+            
+                  <img class="mb-4" src="img/icons/pc.webp" width="80" alt="computador">
+                  <h5>Simulação</h5>
+                  <p class="mx-auto mt-3 element-color">Preencha o formulário e faça uma simulação para dar continuedade.</p>
+            
+              </div>
+            
+              <div class="col-md-4 mt-5">
+            
+                  <img class="mb-4" src="img/icons/autorizacao.webp" width="80" alt="autorização">
+                  <h5>Assinatura</h5>
+                  <p class="mx-auto mt-3 element-color">Aceite a proposta e nos forneça os dados solicitados.</p>
+            
+              </div>
+            
+              <div class="col-md-4 mt-5">
+            
+                  <img class="mb-4" src="img/icons/banco.webp" width="80" alt="Banco">
+                  <h5>Recebimento</h5>
+                  <p class="mx-auto mt-3 element-color">Por fim, receba o seu Cartão Consignado em casa, com total segurança.</p>
+            
+              </div>
+            
+            </div>
+
+        </div>
+
+          
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320">
+          <path fill="#fff " fill-opacity="1" d="M0,224L80,218.7C160,213,320,203,480,192C640,181,800,171,960,170.7C1120,171,1280,181,1360,186.7L1440,192L1440,320L1360,320C1280,320,1120,320,960,320C800,320,640,320,480,320C320,320,160,320,80,320L0,320Z"></path>
+        </svg>
+
+      </section>
+
+
+      <!-- Inicio Seção 5 -->
+      <section id="element-questions">
+
+        <div class="container text-center">
+
+          <div class="mb-5">
+            <h4>Perguntas</h4>
+            <h3 class="display-3 ml-md-5 mb-5">Frequentes</h3>
+          </div>
+
+          <div style="visibility: hidden; position: absolute; width: 0px; height: 0px;">
+            <svg xmlns="http://www.w3.org/2000/svg">
+              <symbol viewBox="0 0 24 24" id="expand-more">
+                <path d="M16.59 8.59L12 13.17 7.41 8.59 6 10l6 6 6-6z" />
+                <path d="M0 0h24v24H0z" fill="none" />
+              </symbol>
+              <symbol viewBox="0 0 24 24" id="close">
+                <path d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z" />
+                <path d="M0 0h24v24H0z" fill="none" />
+              </symbol>
+            </svg>
+          </div>
+          
+          <details>
+            <summary>
+              Quais as taxas do Cartão Consignado?
+              <svg class="control-icon control-icon-expand" width="24" height="24" role="presentation">
+                <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#expand-more" />
+              </svg>
+              <svg class="control-icon control-icon-close" width="24" height="24" role="presentation">
+                <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#close" />
+              </svg>
+            </summary>
+            <p>Enquanto os cartões de crédito comuns têm juros de 298,6% ao ano, na modalidade rotativo, as taxas do cartão de crédito consignado são de 2,70% ao mês, conforme determinação do Conselho Nacional de Previdência Social (CNPS).</p>
+          </details>
+          
+          <details>
+          
+            <summary>
+              Qual a diferença entre Cartão Consignado e Empréstimo Consignado?
+              <svg class="control-icon control-icon-expand" width="24" height="24" role="presentation">
+                <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#expand-more" />
+              </svg>
+              <svg class="control-icon control-icon-close" width="24" height="24" role="presentation">
+                <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#close" />
+              </svg>
+            </summary>
+            <p> é um meio de pagamento e funciona como um cartão de crédito comum, que você poderá usar para compras e saques, além de receber mensalmente sua fatura com saldo e boleto. </p>
+
+            <p>Já o <strong>Empréstimo Consignado</strong>  prevê parcelas fixas por um prazo determinado.</p>
+          </details>
+          
+          <details>
+            <summary>
+              Posso parcelar a fatura do meu cartão?
+              <svg class="control-icon control-icon-expand" width="24" height="24" role="presentation">
+                <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#expand-more" />
+              </svg>
+              <svg class="control-icon control-icon-close" width="24" height="24" role="presentation">
+                <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#close" />
+              </svg>
+            </summary>
+            <p>Não. O Cartão de Crédito Consignado não permite a opção de parcelamento de fatura. Mas é possível pagar qualquer valor entre o mínimo e o valor total da fatura. O saldo restante será rotativado e cobrado na próxima fatura, junto com os encargos.</p>
+          </details>
+
+          <details>
+            <summary>
+              Quais benefícios em ter o Cartão de Crédito Consignado?
+              <svg class="control-icon control-icon-expand" width="24" height="24" role="presentation">
+                <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#expand-more" />
+              </svg>
+              <svg class="control-icon control-icon-close" width="24" height="24" role="presentation">
+                <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#close" />
+              </svg>
+            </summary>
+            <p>Dentre os principais benefícios do Cartão Consignado podemos destacar:</p>
+
+            <p>- Sem anuidade<br>- Taxas de juros muito menores do que as de um cartão convencional<br>- Internacional <br>- Saque em dinheiro com juros baixo</p>
+          </details>
+
+          <details>
+            <summary>
+              Onde eu posso usar meu Cartão?
+              <svg class="control-icon control-icon-expand" width="24" height="24" role="presentation">
+                <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#expand-more" />
+              </svg>
+              <svg class="control-icon control-icon-close" width="24" height="24" role="presentation">
+                <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#close" />
+              </svg>
+            </summary>
+            <p>O cartão consignado pode ser usado para fazer compras online, presencial, pagamento de serviços e saques, no Brasil e no exterior.</p>
+          </details>
+
+          <details>
+            <summary>
+              Como funciona o saque do Cartão de Crédito Consignado?
+              <svg class="control-icon control-icon-expand" width="24" height="24" role="presentation">
+                <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#expand-more" />
+              </svg>
+              <svg class="control-icon control-icon-close" width="24" height="24" role="presentation">
+                <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#close" />
+              </svg>
+            </summary>
+              <p>O saque em dinheiro pode ser feito em redes bancárias 24 horas, que disponibilizam essa opção.</p>
+              
+              <p>O valor máximo para esse saque é de, normalmente, 95% do crédito limite de crédito disponível. Assim como o limite e a taxa de juros, essa porcentagem pode variar conforme a instituição financeira contratada.</p>
+              
+              <p>Se o consumidor tiver utilizado parte do limite em compras parcelas, o valor disponível para saque será a diferença do valor.</p>
+          </details>
+
+        </div>
+
+      </section>
+
+    </main>
+
+    <!-- Inicio Rodapé -->
+    <footer>
+    
+      <section class="fundo text-white" id="rodape">
+    
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 290">
+          <path fill="#fff" fill-opacity="1"
+            d="M0,128L120,149.3C240,171,480,213,720,218.7C960,224,1200,192,1320,176L1440,160L1440,0L1320,0C1200,0,960,0,720,0C480,0,240,0,120,0L0,0Z">
+          </path>
+        </svg>
+    
+        <div class="container">
+    
+          <div class="row mt-5 mt-md-0">
+    
+            <div class="col-md-6 mb-3 text-center text-md-left mt-3 mt-md-0">
+    
+              <img class="mb-1" src="img/logwhiteandyelow.png" width="160" alt="Logo Líder">
+    
+              <div class="mt-2 icon">
+    
+                <span> <a href="https://www.facebook.com/liderfinanceira.if/" target="_blank"><i
+                      class="fab fa-facebook fa-lg"></i></a> </span>
+                <span> <a href="https://www.instagram.com/liderfinanceira/" target="_blank"><i
+                      class="fab fa-instagram fa-lg"></i></a> </span>
+                <span> <a href="https://www.linkedin.com/company/liderfinanceira" target="_blank"><i
+                      class="fab fa-linkedin fa-lg"></i></a> </span>
+                <span> <a href="https://bit.ly/SomosLider" target="_blank"><i class="fas fa-link fa-lg"></i></a> </span>
+    
+              </div>
+    
+            </div>
+    
+            <div class="col-md-6 mt-md-5 text-center text-md-right">
+    
+              <p><a href="politicas-de-privacidade.html" class="text-white text "><u>Politicas de Privacidade</u></a></p>
+    
+            </div>
+    
+            <div class="col-md-12 text-size text-center text-md-left mt-3 mb-4">
+    
+              <p>Nós, da LL COBRANÇAS INFORMAÇÕES CADASTRAIS - LTDA, pessoa jurídica de direito privado, inscrita no CPNJ
+                sob o 37.787.673/0001-43, atuamos como correspondente bancário para facilitar o processo de contratação de
+                empréstimos, por meio de nossa plataforma digital disponível em www.liderfinanceira.com</p>
+    
+              <p>Quando você utiliza a LIDER, você nos confia seus dados pessoais. Nos comprometemos a manter essa
+                confiança. Nesse sentido, esta Política de Privacidade explica de maneira clara e acessível como as suas
+                informações e dados serão coletados, usados, compartilhados e armazenados por meio dos nossos sistemas.</p>
+    
+              <p>A aceitação desta Política será feita quando o usuário concordar, de forma afirmativa, com o uso dos seus
+                dados pessoais para cada uma das finalidades por nós aqui descritas. Caso não concorde com esta Política,
+                por favor, não continue interagindo com a Plataforma. Todavia, pedimos que nos explique o motivo de
+                discordância para que possamos melhorar nossos produtos.</p>
+    
+              <p>Este documento deve ser lido em conjunto com os nossos Termos de Uso, documento que contém uma visão geral
+                da nossa Plataforma. Caso tenha dúvidas ou precise tratar de qualquer assunto relacionado a esta Política,
+                entre em contato conosco através do e-mail <a class="text-color"
+                  href="mailto:contato@liderfinanceira.com"><u>contato@liderfinanceira.com</u></a></p>
+            </div>
+    
+            <div class="col-md-12 mb-5">
+    
+              <div class="row">
+                <div class="col-md-6 text text-center text-md-left">
+                  &copy; 2021 Copyright Líder Consig. Todos direitos reservados.
+                </div>
+                <div class="col-md-6 mt-4 mt-md-0  text-size text-center text-md-right">
+                  <span>Desenvolvido por: Lucas Brandão</span>
+                </div>
+              </div>
+    
+            </div>
+    
+          </div>
+        </div>
+      </section>
+    
+    </footer>
+
+
+    <!-- JavaScript (Opcional) -->
+    <!-- jQuery primeiro, depois Popper.js, depois Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/scroll.js"></script>
+
+    <script type="text/javascript">
+      SyntaxHighlighter.all()
+    </script>
+
+  </body>
+</html>

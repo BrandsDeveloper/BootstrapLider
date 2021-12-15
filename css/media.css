@@ -1,0 +1,326 @@
+@media (min-width:992px) and (max-width:1199px){
+    #intro .space {
+        margin-bottom: -161px;
+    }
+
+    #intro .text-form {
+        font-size: 3.4em;
+    }
+
+    #card #intro .space {
+        margin-bottom: 20px;
+    }
+
+    #element-product div > .bordas h5 {
+        font-size: 1.1em;
+    }
+
+    #element-product div > .bordas h3 {
+        font-size: 1.4em;
+    }
+
+    #rodape .icon {
+        width: 36%;
+    }
+}
+
+@media (min-width:768px) and (max-width:991px){
+
+    header .space{
+        display: none;
+    }
+
+    #intro .space {
+        margin-bottom: -125px;
+    }
+
+    #intro div img {
+        width: 110%;
+    }
+
+    #intro .text-form {
+        font-size: 2.8em;
+    }
+
+    #intro div > p:nth-of-type(1) {
+        font-size: 1em;
+    }
+
+    #intro div > p:nth-of-type(2) {
+        margin-top: initial;
+        width: 102%;
+    }
+
+    #intro div button > a {
+        font-size: 0.8em;
+    }
+
+    #element-product div > .bordas {
+        width: 50%;
+    }
+    
+    #fgts #element-permission div > .bordas {
+        width: initial;
+    }
+
+    #emprestimo #element-why h1 {
+        font-size: 2.2em;
+    }
+
+    #intro .text-form {
+        font-size: 2.3em;
+    }
+
+    #card #intro .space {
+        margin-bottom: 20px;
+    }
+
+    #element-product div > .bordas h5 {
+        font-size: 1.1em;
+    }
+
+    #element-product div > .bordas h3 {
+        font-size: 1.4em;
+    }
+
+    #contato #element-localization div > .space > div.col-lg-4 {
+        margin-bottom: 6%;
+    }
+
+    #contato #element-localization div > .space > div.col-lg-4 > div {
+        width: 50%;
+    }
+
+    #rodape .icon {
+        width: 49%;
+    }
+}
+
+@media (min-width:320px) and (max-width:767px) {
+
+    header label{
+        display: block;
+        margin-top: 2%;
+        margin-right: 2%;
+        font-size: 1.3em;
+        
+    }
+
+    header nav div div.bar-responsive{
+        position: absolute;
+        top: 0%;
+        width: 80%;
+        left: -100%;
+        display: flex;
+        justify-content: center;
+        background: #203d68;
+        height: 100vh;
+        transition: all 0.5s ;
+    }
+
+    header nav div ul li div{
+        height: 120px;
+        margin: auto;
+        border: 0px !important;
+        background: rgba(46, 87, 148, 0.644) !important;
+    }
+
+    header nav div ul li div a{
+        color: #ffffffcc !important;
+    }
+
+    header .space{
+        width: 100%;
+    }
+
+    header .space > a{
+        margin: 0px 15px;
+    }
+
+    #check{
+        display: none;
+    }
+
+    #check:checked ~ .bar-responsive{
+        left: 0% !important;
+    }
+
+    .sticky label.two{
+        display: block;
+    }
+
+    .sticky div ul li a {
+        color: #ffffffcc !important;
+    }
+
+    .sticky div ul li a:hover{
+        color: #ffffff80 !important;
+    }
+
+    header nav div ul li{
+        padding: 3% 9%;
+    }
+
+    header nav div ul li > button{
+        margin: 0px !important;
+    }
+
+    header div ul .element-size{
+        width: 100%;
+        margin: auto;
+    }
+
+    header div ul div .text-size{
+        font-size: 0.8em;
+    }
+
+    #element-fixed .move {
+        right: 4.5%;
+        bottom: 3%;
+    }
+
+    #element-questions summary {
+        font-size: 0.9em;
+    }
+
+    #element-questions details p {
+        font-size: 0.9em;
+    }
+
+    .color{
+        margin-bottom: -462px;
+    }
+
+    #element-questions h3 {
+        font-size: 3em;
+    }
+
+    #intro div > h1{
+        font-size: 2.5em;
+    }
+
+    #intro div > p:nth-of-type(2){
+        width: initial;
+        margin-top: 35px;
+        color: #0f3350;
+    }
+
+    #element-product div > .bordas{
+        width: 90%;
+    }
+
+    #element-product div > .bordas h5{
+        font-size: 1.1em;
+    }
+    
+    #element-product div > .bordas h3{
+        font-size: 1.4em;
+        width: 107%;
+    }
+
+    #element-differential h1 {
+        font-size: 1.7rem;
+    }
+
+    #element-attendance .element-space{
+        padding-right: 0%;
+    }
+
+    .slide-content li img{
+        width: 50%;
+    }
+
+    #rodape .icon{
+        margin: 0px auto 0px auto;
+        width: 48%;
+        display: flex;
+        justify-content: space-between;
+    }
+
+    #quem #element-pillars h2{
+        font-size: 2.2em;
+    }
+
+    #quem #element-testimonial div > h2{
+        font-size: 2.2em;
+    }
+
+    #quem #element-testimonial .carousel {
+        width: initial;
+    }
+    
+    #fgts #element-which h2 {
+        font-size: 3em;
+    }
+
+    #fgts #element-permission h2 {
+        font-size: 3em;
+    }
+
+    #fgts #element-benefits h2 {
+        font-size: 3em;
+    }
+
+    #intro .text-form {
+        font-size: 2.5em;
+    }
+
+    #emprestimo #element-explain div > h2 {
+        font-size: 2.5em;
+    }
+
+    #emprestimo #element-people h5 {
+        font-size: 3em;
+    }
+
+    #emprestimo #element-why {
+        margin-top: initial;
+    }
+
+    #emprestimo #element-why h1 {
+        font-size: 2.4em;
+    }
+
+    #emprestimo #element-why .element-back {
+        border-radius: 0px 15px 15px 0px;
+    }
+
+    #emprestimo #element-why .size {
+        width: 30%;
+    }
+
+    #emprestimo #element-why .space {
+        margin-left: -5%;
+    }
+
+    #emprestimo #element-why .space img {
+        position: relative;
+        top: 35%;
+    }
+
+    #contato #element-forms div > form{
+        padding: initial;
+    }
+
+    #card #intro div > h2 {
+        font-size: 3em;
+    }
+
+    #card #element-consigned div > h2 {
+        font-size: 2.5em;
+    }
+
+    #card #element-profitable h5 {
+        font-size: 3em;
+    }
+
+    #contato #element-localization div > .bordas h6:nth-of-type(1){
+        font-size: 0.8em;
+    }
+
+    #politica h2{
+        font-size: 1.8em;
+    }
+
+}
+

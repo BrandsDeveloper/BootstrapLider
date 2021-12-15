@@ -1,0 +1,700 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <!-- Meta tags Obrigatórias -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
+
+    <title>FGTS</title>
+
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/media.css">
+    <link rel="shortcut icon" href="img/blue.ico" type="image/x-icon">
+
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js" type="text/javascript"></script>
+    <script src="js/maskMoney.js" type="text/javascript"></script>
+
+  </head>
+
+  <body id="fgts">
+    
+    <!-- Inicio Barra de Navegação -->
+    <header id="topo">
+
+      <nav class="navbar fixed-top navbar-expand-md color">
+
+        <div class="container">
+
+          <a href="index.html" class="navbar-brand one"> 
+            <img src="img/logwhiteandyelow.png" width="142" alt="Logo Líder"> 
+          </a>
+
+          <a href="index.html" class="navbar-brand"> 
+            <img src="img/logblue.png" class="two" width="142" alt="Logo Líder"> 
+          </a>
+          
+          <input type="checkbox" class="" id="check">
+            <label for="check" class="text-light one"> <i class="fas fa-bars fa-lg"></i> </label>
+          </input>
+
+          <input type="checkbox" class="" id="check">
+            <label for="check" class="text-dark two"> <i class="fas fa-bars fa-lg"></i> </label>
+          </input>
+
+          <div class="navbar-collapse bar-responsive">
+
+            <ul class="navbar-nav ml-md-auto text-color">
+
+              <li class="nav-item">
+                <a class="nav-link" href="index.html">Home</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="quem_somos.html">Quem somos</a>
+              </li>
+              <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="">Produtos</a>
+
+                <div class="dropdown-menu">
+                  <a class="dropdown-item" href="fgts.html">FGTS</a>
+                  <a class="dropdown-item" href="emprestimo.html">Crédito Consignado</a>
+                  <a class="dropdown-item" href="cartao.html">Cartão de Crédito</a>
+                </div>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="contato.html">Contato</a>
+              </li>
+
+              <li class="nav-item space">
+                <a class="nav-link" href="https://www.facebook.com/liderfinanceira.if/" target="_blank"> <i class="fab fa-facebook-f fa-lg"></i> </a>
+                <a class="nav-link" href="https://www.instagram.com/liderfinanceira/" target="_blank"> <i class="fab fa-instagram fa-lg"></i> </a>
+              </li>
+
+              <li class="nav-item">
+                <button type="button" class="btn btn-primary btn-css d-flex align-items-center" onclick="Mudarestado('minhaDiv')">Simule aqui</button>
+              </li>
+
+              <div class="row d-md-none pl-2 text-white element-size">
+                <div class="col-md-6 mt-2 text-size">
+                  &copy; 2021 Copyright Líder Consig. Todos direitos reservados.
+                </div>
+                <div class="col-md-6 mt-2 text-size">
+                  <span>Desenvolvido por: Lucas Brandão</span>
+                </div>
+              </div>
+
+            </ul>
+
+            
+
+          </div>
+        </div>
+
+      </nav>
+
+    </header>
+
+    <section id="minhaDiv" class="bg-white shadow">
+
+      <div class="px-3 py-1 bg-primary text-white">
+    
+        <div class="row align-items-center justify-content-between">
+          
+            <div class="col-12 text-center">
+              <span class="font-weight-bolder">Simulador Livre</span>
+            </div> 
+            
+        </div>
+      </div>
+    
+        <div class="p-3">
+    
+          <div class="row align-items-end">
+
+            <div class="col-6 text-center">
+
+              <label for="parcela" class="d-block mb-1">Parcela</label> 
+              <input id="parcela" type="text" autocomplete="off" class="form-control w-100" name="money" placeholder="Ex: R$ 500,00" data-thousands="." data-decimal="," data-prefix="R$ ">
+              <script type="text/javascript">$("#parcela").maskMoney();</script>
+
+
+            </div> 
+            
+            <div class="col-auto">
+              <span class="d-block mb-1">Valor Liberado 
+                <span class="d-flex align-items-end text-primary font-weight-bolder result-value"> R$ 
+                  <input type="text" id="result" class="bordinhas" readonly="readonly" value="0,00"> 
+                </span> 
+              </span>
+            </div>
+
+          </div> 
+
+        <hr> 
+        
+        <div class="row align-items-end">
+
+          <div class="col-6 text-center">
+
+            <label for="liberado" class="d-block mb-1">Valor Desejado</label> 
+            <input id="liberado" type="text" autocomplete="off" class="form-control w-100" name="money" placeholder="Ex: R$ 25.000,00" data-thousands="." data-decimal="," data-prefix="R$ ">
+            <script type="text/javascript">$("#liberado").maskMoney();</script>
+
+          </div> 
+          
+          <div class="col-auto">
+
+            <span class="d-block mb-1">Parcela
+              <span class="d-flex align-items-end text-primary font-weight-bolder result-value"> R$ 
+                <input type="text" id="resultado" class="bordinhas" readonly="readonly" value="0,00" > 
+              </span>
+            </span>
+
+          </div>
+
+        </div>
+        
+      </div>
+
+    </section>
+    
+
+    <!-- Inicio Conteudo -->
+    <main>
+
+      <!-- Inicio Botões Fixos -->
+      <section id="element-fixed">
+      
+        <div class="move">
+      
+          <a href="#intro">
+            <img src="img/icons/seta2.webp" width="50" alt="seta">
+          </a>
+      
+        </div>
+      
+        <div class="move-2">
+      
+          <a href="https://api.whatsapp.com/send?phone=551124792004&text=Ol%C3%A1%2C%20vim%20do%20Site%20de%20voc%C3%AAs%20e%20gostaria%20de%20saber%20mais%20informa%C3%A7%C3%B5es%20sobre%20os%20produtos%20que%20voc%C3%AAs%20trabalham" class="d-none d-md-block" target="_blank">
+            <img src="img/icons/Whats.webp" width="50" alt="botão whatsapp">
+          </a>
+      
+        </div>
+      
+      </section>
+
+      <!-- Inicio Seção 1 -->
+      <section id="intro">
+
+          <div class="container">
+
+            <div class="row pt-5 space">
+
+              <div class="col-md-5 d-flex">
+
+                <div class="mt-5">
+
+                  <h1 class="display-3 text-white text-form"> Antecipação Saque Aniversário </h1>
+
+                  <p class="mt-3">Utilize seu saldo e antencipe até 5 saques através do seu FGTS</p>
+
+                </div>
+
+              </div>
+
+              <div class="col-md-7 d-none d-md-block">
+                <img src="img/pessoas/8.webp" alt="jovem">
+              </div>
+
+            </div>
+
+          </div>
+          
+          <svg class="svgg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 240">
+            <path fill="#fff" fill-opacity="1"
+              d="M0,0L80,10.7C160,21,320,43,480,80C640,117,800,171,960,181.3C1120,192,1280,160,1360,144L1440,128L1440,320L1360,320C1280,320,1120,320,960,320C800,320,640,320,480,320C320,320,160,320,80,320L0,320Z">
+            </path>
+          </svg>
+
+      </section>
+
+      <!-- Inicio Seção 2 -->
+      <section id="element-which">
+
+        <div class="container">
+
+          <div class="row">
+
+            <div class="col-md-12 text-center">
+
+              <h4 class="ml-lg-4">Mas afinal</h4>
+              <h2 class="display-4 mb-5">O que é?</h2>
+
+              <div class="text-center text-md-left mt-5">
+                <p class="mt-5">Nova modalidade de crédito disponível para as pessoas que trabalham ou já trabalharam de carteira assinada.</p>
+                
+                <p>O saque de aniversário é uma opção oferecida ao funcionário como uma possibilidade, ao regime de rescisão do contrato de trabalho, que permite sacar parte do saldo da conta do FGTS a cada ano, durante o mês de seu aniversário.</p>
+                
+                <p>A modalidade consiste em uma antecipação do valor dos saques disponíveis para o mês do seu aniversário. O saldo do FGTS serve como garantia das operações, trazendo simplicidade e agilidade ao contrato.
+                </p>
+                
+                <p>Os funcionários que optam pelo saque aniversário e têm saldo disponível no FGTS, ativa ou inativa. Poderá utilizar o FGTS como garantia para sacar os fundos de aniversário com a possibilidade de sacar até 05 anos de antecedência. É pago uma vez ao ano e debitado diretamente na conta do FGTS, traduzindo não irá interferir na sua renda e te trará uma solução de forma rápida, segura e ágil.</p>
+                
+                <p>Taxa de juros atrativa de 1,99%. O crédito é rápido e fácil, nenhuma papelada é necessária. Basta acessar recursos de banco online, simulação, aluguel e uso.</p>
+              </div>
+                
+            </div>
+
+          </div>
+
+        </div>
+
+      </section>
+
+      <!-- Inicio Seção 3 -->
+      <section id="element-permission">
+
+        <div class="container">
+
+          <div class="row">
+
+            <div class="col-md-12 text-center">
+              <h4 class="ml-lg-4">Quem tem</h4>
+              <h2 class="display-4 ml-3 ml-md-5">Direito?</h2>
+            </div>
+
+            <div class="col-md-4 d-flex justify-content-center mt-5">
+
+              <div class="bordas py-3">
+
+                  <div class="row text-center p-0">
+                    <div class="col-md-12">
+                      <img src="img/icons/pessoa2.webp" width="90" alt="icon pessoa">
+                    </div>
+                    <div class="col-md-12 p-0">
+                      <h6 class="text-black-50">Ser maior de 18 anos ou emancipado</h6>
+                    </div>
+                  </div>
+
+              </div>
+
+            </div>
+            
+            <div class="col-md-4 d-flex justify-content-center mt-5">
+
+              <div class="bordas py-3">
+
+                  <div class="row text-center p-0">
+
+                    <div class="col-md-12 ">
+                      <img src="img/icons/CPF2.webp" width="90" alt="cpf">
+                    </div>
+
+                    <div class="col-md-12 p-0">
+                      <h6 class="text-black-50">Conter o CPF regular na Receita Federal</h6>
+                    </div>
+
+                  </div>
+
+              </div>
+            </div>
+            
+            <div class="col-md-4 d-flex justify-content-center mt-5">
+
+              <div class="bordas py-3">
+
+                <div class="row text-center p-0">
+
+                  <div class="col-md-12">
+                    <img src="img/icons/conta2.webp" width="90" alt="conta">
+                  </div>
+
+                  <div class="col-md-12 p-0">
+                    <h6 class="text-black-50">Possuir conta-corrente ou poupança</h6>
+                  </div>
+
+                </div>
+
+              </div>
+
+            </div>
+
+          </div>
+
+        </div>
+
+      </section>
+
+      <!-- Inicio Seção 4 -->
+      <section id="element-benefits">
+
+        <div class="container">
+        
+          <div class="row">
+        
+            <div class="col-md-12 text-center">
+              <h4 class="ml-lg-4">Quais são as</h4>
+              <h2 class="display-4 ml-md-5">Vantages?</h2>
+            </div>
+
+              <div class="col-md-6 d-flex align-items-center justify-content-center ">
+  
+                <img src="img/iphone.webp" width="420" class="d-none d-md-block img-fluid" alt="iphone">
+  
+              </div>
+
+              <div class="col-md-6 text-center text-md-left">
+                
+                <div class="row element-benefits">
+
+                  <div class="col-md-2 p-0">
+                      <img src="img/icons/facilidade.webp" width="60" class="img-fluid" alt="facilidade">
+                  </div>
+
+                    <div class="col-md-10 pl-2 p-0">
+                      <h3>Facilidade</h3>
+                      <h6 class="mx-4 mx-md-0">Crédito rápido e de fácil contratação</h6>
+                    </div>
+
+                  </div>
+
+                  <div class="row element-benefits">
+                  
+                    <div class="col-md-2 p-0">
+                      <img src="img/icons/Economia.webp" width="60" class="img-fluid" alt="economia">
+                    </div>
+
+                    <div class="col-md-10 pl-md-2 p-0">
+                      <h3>Economia</h3>
+                      <h6 class="mx-4 mx-md-0">A melhor taxa de juros para crédito pessoal</h6>
+                    </div>
+
+                  </div>
+
+
+                  <div class="row element-benefits">
+                  
+                    <div class="col-md-2 p-0">
+                      <img src="img/icons/proveito.webp" width="60" class="img-fluid" alt="beneficio">
+                    </div>
+
+                    <div class="col-md-10 pl-md-2 p-0">
+                      <h3>Conveniência</h3>
+                      <h6 class="mx-4 mx-md-0">Não pesa no orçamento pois não tem prestação mensal</h6>
+                    </div>
+                  </div>  
+
+                  <div class="row element-benefits">
+                  
+                    <div class="col-md-2 p-0">
+                      <img src="img/icons/agilidade.webp" width="60" class="img-fluid" alt="agilidade">
+                    </div>
+
+                    <div class="col-md-10 pl-md-2 p-0">
+                      <h3>Agilidade</h3>
+                      <h6 class="mx-4 mx-md-0">Dinheiro na conta no dia seguinte à contratação</h6>
+                    </div>
+
+                  </div>
+
+                  <div class="row element-benefits">
+                  
+                    <div class="col-md-2 p-0">
+                      <img src="img/icons/joinha.webp" width="60" class="img-fluid" alt="joinha">
+                    </div>
+
+                    <div class="col-md-10 pl-md-2 p-0">
+                      <h3>Praticidade</h3>
+                      <h6 class="mx-4 mx-md-0">Pagamento automático e em parcela única, para você não se incomodar</h6>
+                    </div>
+
+                  </div>
+  
+              </div>
+  
+          </div>
+
+      </section>
+
+      <!-- Inicio Seção 5 -->
+      <section id="element-hire">
+
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320">
+          <path fill="#fff" fill-opacity="1" d="M0,160L80,165.3C160,171,320,181,480,176C640,171,800,149,960,138.7C1120,128,1280,128,1360,128L1440,128L1440,0L1360,0C1280,0,1120,0,960,0C800,0,640,0,480,0C320,0,160,0,80,0L0,0Z"></path>
+        </svg>
+
+        <div class="container mt-5 mt-md-0 text-center">
+
+          <div class="col-md-12">
+            <h3 class="ml-4">Solicite agora o seu Fundo de Garantia</h3>
+            <p class="element-size">Antecipe até 5 saques-aniversário no seu Saldo FGTS</p>
+          </div>
+
+            <div class="row justify-content-center mt-5 mt-md-0 mb-5 mb-md-0">
+            
+              <div class="col-md-3">
+            
+                  <img class="mb-4" src="img/icons/pc.webp" width="80" alt="computador">
+                  <h5>Preencha o Formulário</h5>
+                  <p class="mx-auto mt-3">Aguarde até que um de nossos atendentes entrem em
+                    contato para dar continuedade</p>
+            
+              </div>
+            
+              <div class="col-md-3">
+            
+                  <img class="mb-4" src="img/icons/saque.webp" width="80" alt="saque">
+                  <h5>Adesão ao saque aniversário</h5>
+                  <p class="mx-auto  mt-3">Abra o app do FGTS e faça a adesão do saque aniversário para prosseguir com a sua contratação</p>
+            
+              </div>
+            
+              <div class="col-md-3">
+            
+                  <img class="mb-4" src="img/icons/autorizacao.webp" width="80" alt="autorização">
+                  <h5>Autorizar o banco</h5>
+                  <p class="mx-auto  mt-3">No app do FGTS você irá autorizar o banco contratante para que ele possa
+                    consultar suas informações</p>
+            
+              </div>
+            
+              <div class="col-md-3">
+            
+                  <img class="mb-4" src="img/icons/libe.webp" width="80" alt="">
+                  <h5>Dinheiro na conta</h5>
+                  <p class="mx-auto  mt-3">Após a aprovação o seu dinheiro estará na conta, para que você possa utilizar da
+                    forma que quiser!</p>
+            
+              </div>
+            
+            </div>
+
+        </div>
+
+          
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320">
+          <path fill="#fff" fill-opacity="1" d="M0,160L80,165.3C160,171,320,181,480,176C640,171,800,149,960,138.7C1120,128,1280,128,1360,128L1440,128L1440,320L1360,320C1280,320,1120,320,960,320C800,320,640,320,480,320C320,320,160,320,80,320L0,320Z"></path>
+        </svg>
+
+        </div>
+
+      </section>
+
+      <!-- Inicio Seção 6 -->
+      <section id="element-questions">
+
+        <div class="container text-center">
+
+          <div class="mb-5">
+            <h4>Perguntas</h4>
+            <h3 class="display-4 ml-md-5 mb-5">Frequentes</h3>
+          </div>
+
+          <div style="visibility: hidden; position: absolute; width: 0px; height: 0px;">
+            <svg xmlns="http://www.w3.org/2000/svg">
+              <symbol viewBox="0 0 24 24" id="expand-more">
+                <path d="M16.59 8.59L12 13.17 7.41 8.59 6 10l6 6 6-6z" />
+                <path d="M0 0h24v24H0z" fill="none" />
+              </symbol>
+              <symbol viewBox="0 0 24 24" id="close">
+                <path d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z" />
+                <path d="M0 0h24v24H0z" fill="none" />
+              </symbol>
+            </svg>
+          </div>
+          
+          <details>
+            <summary>
+              Como funcionar o FGTS?
+              <svg class="control-icon control-icon-expand" width="24" height="24" role="presentation">
+                <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#expand-more" />
+              </svg>
+              <svg class="control-icon control-icon-close" width="24" height="24" role="presentation">
+                <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#close" />
+              </svg>
+            </summary>
+            <p>O empréstimo consiste na antecipação do saque de aniversario do FGTS. Todo trabalhador que possui vínculo trabalhista
+            através da CLT pode obter o empréstimo. O cliente que se encaixa nesse parâmetro tem o direito de antecipar até 5
+            parcelas. A quitação funciona da seguinte forma: o valor será descontado automaticamente apenas 1 vez a cada ano, assim
+            que o saque aniversário for liberado. Ou seja, o cliente não precisa pagar parcelas mensais e não terá sua renda
+            impactada pelo empréstimo.</p>
+          </details>
+          
+          <details>
+          
+            <summary>
+              O que é o saque aniversário ?
+              <svg class="control-icon control-icon-expand" width="24" height="24" role="presentation">
+                <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#expand-more" />
+              </svg>
+              <svg class="control-icon control-icon-close" width="24" height="24" role="presentation">
+                <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#close" />
+              </svg>
+            </summary>
+            <p>A partir da LEI Nº 13.932, DE 11 DE DEZEMBRO DE 2019, o governo federal criou uma nova modalidade que dá direito ao
+            trabalhador retirar parte do FGTS uma vez a cada ano. Assim, o trabalhador poderá utilizar o recurso para quitar dívidas
+            mais altas ou fazer algum investimento. O saque pode ser feito no mês de aniversário do trabalhador.</p>
+          </details>
+          
+          <details>
+            <summary>
+              Como acessar o meu saldo do FGTS?
+              <svg class="control-icon control-icon-expand" width="24" height="24" role="presentation">
+                <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#expand-more" />
+              </svg>
+              <svg class="control-icon control-icon-close" width="24" height="24" role="presentation">
+                <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#close" />
+              </svg>
+            </summary>
+            <p>Você consegue saber o saldo do FGTS através do App FGTS (pode ser baixado gratuitamente na APP Store ou Google Play) ou
+            pelo site do FGTS na Caixa Econômica Federal. La você consegue consultar o valor disponível para saque.</p>
+          </details>
+
+          <details>
+            <summary>
+              Quantas parcelas eu posso antecipar nessa operação ?
+              <svg class="control-icon control-icon-expand" width="24" height="24" role="presentation">
+                <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#expand-more" />
+              </svg>
+              <svg class="control-icon control-icon-close" width="24" height="24" role="presentation">
+                <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#close" />
+              </svg>
+            </summary>
+            <p>Atualmente você pode antecipar até 5 parcelas do saque de aniversário.</p>
+          </details>
+
+          <details>
+            <summary>
+              Quem pode fazer essa operação?
+              <svg class="control-icon control-icon-expand" width="24" height="24" role="presentation">
+                <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#expand-more" />
+              </svg>
+              <svg class="control-icon control-icon-close" width="24" height="24" role="presentation">
+                <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#close" />
+              </svg>
+            </summary>
+            <p>Todo trabalhador que possua saldo disponível em conta(s) vinculada(s) do FGTS (contas ativas e inativas), que tenha
+            optado pela modalidade do saque aniversário e que tenha autorizado o Safra a consultar o saldo do saque aniversário
+            disponível.</p>
+          </details>
+
+          <details>
+            <summary>
+              A empresa que trabalho precisa aprovar essa operação?
+              <svg class="control-icon control-icon-expand" width="24" height="24" role="presentation">
+                <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#expand-more" />
+              </svg>
+              <svg class="control-icon control-icon-close" width="24" height="24" role="presentation">
+                <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#close" />
+              </svg>
+            </summary>
+            <p>Não, a empresa que realiza os pagamentos em sua conta do FGTS não possui qualquer vínculo com a contratação do
+            empréstimo com garantia do saque aniversário do FGTS.</p>
+          </details>
+
+        </div>
+
+      </section>
+
+    </main>
+
+    <!-- Inicio Rodapé -->
+    <footer>
+    
+      <section class="fundo text-white" id="rodape">
+    
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 290">
+          <path fill="#fff" fill-opacity="1"
+            d="M0,128L120,149.3C240,171,480,213,720,218.7C960,224,1200,192,1320,176L1440,160L1440,0L1320,0C1200,0,960,0,720,0C480,0,240,0,120,0L0,0Z">
+          </path>
+        </svg>
+    
+        <div class="container">
+    
+          <div class="row mt-5 mt-md-0">
+    
+            <div class="col-md-6 mb-3 text-center text-md-left mt-3 mt-md-0">
+    
+              <img class="mb-1" src="img/logwhiteandyelow.png" width="160" alt="Logo Líder">
+    
+              <div class="mt-2 icon">
+    
+                <span> <a href="https://www.facebook.com/liderfinanceira.if/" target="_blank"><i
+                      class="fab fa-facebook fa-lg"></i></a> </span>
+                <span> <a href="https://www.instagram.com/liderfinanceira/" target="_blank"><i
+                      class="fab fa-instagram fa-lg"></i></a> </span>
+                <span> <a href="https://www.linkedin.com/company/liderfinanceira" target="_blank"><i
+                      class="fab fa-linkedin fa-lg"></i></a> </span>
+                <span> <a href="https://bit.ly/SomosLider" target="_blank"><i class="fas fa-link fa-lg"></i></a> </span>
+    
+              </div>
+    
+            </div>
+    
+            <div class="col-md-6 mt-md-5 text-center text-md-right">
+    
+              <p><a href="politicas-de-privacidade.html" class="text-white text "><u>Politicas de Privacidade</u></a></p>
+    
+            </div>
+    
+            <div class="col-md-12 text-size text-center text-md-left mt-3 mb-4">
+    
+              <p>Nós, da LL COBRANÇAS INFORMAÇÕES CADASTRAIS - LTDA, pessoa jurídica de direito privado, inscrita no CPNJ
+                sob o 37.787.673/0001-43, atuamos como correspondente bancário para facilitar o processo de contratação de
+                empréstimos, por meio de nossa plataforma digital disponível em www.liderfinanceira.com</p>
+    
+              <p>Quando você utiliza a LIDER, você nos confia seus dados pessoais. Nos comprometemos a manter essa
+                confiança. Nesse sentido, esta Política de Privacidade explica de maneira clara e acessível como as suas
+                informações e dados serão coletados, usados, compartilhados e armazenados por meio dos nossos sistemas.</p>
+    
+              <p>A aceitação desta Política será feita quando o usuário concordar, de forma afirmativa, com o uso dos seus
+                dados pessoais para cada uma das finalidades por nós aqui descritas. Caso não concorde com esta Política,
+                por favor, não continue interagindo com a Plataforma. Todavia, pedimos que nos explique o motivo de
+                discordância para que possamos melhorar nossos produtos.</p>
+    
+              <p>Este documento deve ser lido em conjunto com os nossos Termos de Uso, documento que contém uma visão geral
+                da nossa Plataforma. Caso tenha dúvidas ou precise tratar de qualquer assunto relacionado a esta Política,
+                entre em contato conosco através do e-mail <a class="text-color"
+                  href="mailto:contato@liderfinanceira.com"><u>contato@liderfinanceira.com</u></a></p>
+            </div>
+    
+            <div class="col-md-12 mb-5">
+    
+              <div class="row">
+                <div class="col-md-6 text text-center text-md-left">
+                  &copy; 2021 Copyright Líder Consig. Todos direitos reservados.
+                </div>
+                <div class="col-md-6 mt-4 mt-md-0  text-size text-center text-md-right">
+                  <span>Desenvolvido por: Lucas Brandão</span>
+                </div>
+              </div>
+    
+            </div>
+    
+          </div>
+        </div>
+      </section>
+    
+    </footer>
+
+
+    <!-- JavaScript (Opcional) -->
+    <!-- jQuery primeiro, depois Popper.js, depois Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/scroll.js"></script>
+
+    <script type="text/javascript">
+      SyntaxHighlighter.all()
+    </script>
+
+  </body>
+</html>
