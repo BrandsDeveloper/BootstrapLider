@@ -1,3 +1,7 @@
+![GitHub top language](https://img.shields.io/github/languages/top/BrandsDeveloper/BootstrapLider)
+![GitHub language count](https://img.shields.io/github/languages/count/BrandsDeveloper/BootstrapLider)
+![GitHub repo size](https://img.shields.io/github/repo-size/BrandsDeveloper/BootstrapLider)
+
 # Bootstrap
 
 ##### Primeiro código em Bootstrap
